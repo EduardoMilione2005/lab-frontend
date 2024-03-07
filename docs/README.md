@@ -7,3 +7,4 @@
 
 - [Código](https://github.com/vschettino/lab-frontend/pull/1)
 - [Documentário React](https://www.youtube.com/watch?v=8pDqJVdNa44)
+- [React Official Starting Guide](https://react.dev/learn)
