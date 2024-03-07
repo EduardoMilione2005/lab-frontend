@@ -1,28 +1,43 @@
 import { getInitials } from './utils.js'
 
-export default function Gallery() {
+export default function Gallery({ people }) {
     return (
         <>
             <h2>People in Science</h2>
-            <ListOfPeople />
+            <ListOfPeople people={people} />
         </>
     )
 }
 
-function ListOfPeople() {
-    const scientists = [
-        { name: 'Marie Curie', born: 1867, died: 1934 },
-        { name: 'Albert Einstein', born: 1879, died: 1955 },
-        { name: 'Niels Bohr', born: 1885, died: 1962 },
-    ]
+function ListOfPeople({ people }) {
     return (
         <ul>
-            {scientists.map((person, index) => (
-                <li key={index}>
-                    {person.name} - {getInitials(person.name)} (Viveu{' '}
-                    {person.died - person.born} anos)
+            {people.map((person) => (
+                <li key={person.id}>
+                    <Profile person={person} />
                 </li>
             ))}
         </ul>
+    )
+}
+
+function Profile({ person }) {
+    return (
+        <div>
+            <h3>{person.name}</h3>
+            <p>
+                <strong>Profession:</strong> {person.profession}
+            </p>
+            <p>
+                <strong>Accomplishment:</strong> {person.accomplishment}
+            </p>
+            <img
+                src={`https://i.imgur.com/${person.imageId}s.jpg`}
+                alt={person.name}
+            />
+            <p>
+                <strong>Initials:</strong> {getInitials(person.name)}
+            </p>
+        </div>
     )
 }
