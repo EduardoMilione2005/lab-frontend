@@ -1,3 +1,5 @@
+import { getInitials } from './utils.js'
+
 export default function Gallery() {
     return (
         <>
@@ -16,7 +18,10 @@ function ListOfPeople() {
     return (
         <ul>
             {scientists.map((person, index) => (
-                <li key={index}>{person.name}</li>
+                <li key={index}>
+                    {person.name} - {getInitials(person.name)} (Viveu{' '}
+                    {person.died - person.born} anos)
+                </li>
             ))}
         </ul>
     )
