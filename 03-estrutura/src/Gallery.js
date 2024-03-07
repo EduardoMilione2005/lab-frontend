@@ -22,9 +22,11 @@ function ListOfPeople({ people }) {
 }
 
 function Profile({ person }) {
+    let style = {}
+    if (person.profession === 'chemist') style = { backgroundColor: 'gray' }
     return (
-        <div>
-            <h3>{person.name}</h3>
+        <div style={style}>
+            <h3 className="my-style-class">{person.name}</h3>
             <p>
                 <strong>Profession:</strong> {person.profession}
             </p>
