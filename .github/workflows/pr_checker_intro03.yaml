@@ -1,4 +1,4 @@
-name: Run tests for /demo03
+name: Run tests for /03-estrutura
 
 on:
   push:
