@@ -20,4 +20,4 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Build
-      run: npm run build-prd
+      run: npm run build-prod
