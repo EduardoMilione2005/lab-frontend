@@ -1,0 +1,23 @@
+name: Run PR Checker for /03-estrutura
+
+on:
+  push:
+    paths:
+      - '03-estrutura/**'
+  pull_request:
+    paths:
+      - '03-estrutura/**'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 03-estrutura
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v4
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build-prod
